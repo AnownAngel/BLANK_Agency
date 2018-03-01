@@ -1,0 +1,24 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+                <h2>Registered Users</h2>
+
+                <ul class="users">
+                  <li *ngFor="let user of users"
+                    [class.selected]="user === selectedUser"
+                    (click)="onSelect(user)">
+                    <span>{{user.id}}</span> {{user.name}}
+                  </li>
+                </ul>
+                
+                <app-user-detail [user]="selectedUser"></app-user-detail>
+        </div>
+    </div>
+
+    
+    <button (click)="getUsersById()">Users</button>
+</div>
+
+
+

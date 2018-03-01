@@ -1,0 +1,161 @@
+.row{
+    margin-right: -12px;
+}
+.navbar-nav>li>a{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+   
+.txt{
+    color: white;
+    width: 80%;
+    font-size: 15px;
+}
+.introHeader{
+    color: #6b83ff;
+    margin-bottom: 30px;
+}
+.headerIntro{
+    font-size: 15px;
+}
+#constructionTxt{
+    color: white;
+    text-align: center;
+    font-size: 15px;
+    padding-top: 95px;
+}
+#firstRow{
+    margin-top: 30px;
+}
+
+p{
+    font-family: 'Roboto', sans-serif;
+}
+p.overlay>b{
+    padding: 16px;
+}
+.tooltip {
+    position: static;
+    z-index: 1070;
+    display: inline;
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: none;
+    line-height: none;
+    text-align: none;
+    text-align: none;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: none;
+    letter-spacing: normal;
+    word-break: normal;
+    word-spacing: normal;
+    word-wrap: normal;
+    white-space: normal;
+    filter: alpha(opacity=0);
+    opacity: 1;
+    line-break: auto;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    font-size: 15px;
+
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+
+
+
+#col-sm-5{
+    min-width: 50%;
+}
+
+
+  
+  .container2{
+    width: 600px;
+    height: 230px;
+    background: white;
+    overflow: hidden;
+    position: relative;
+    right: 9%;
+
+  }
+    
+  .diagonal{
+    height: 1000px;
+    width: 200px;
+    overflow: hidden;
+    transform: rotate(25deg);
+     position: absolute;
+     top: -200px;
+    }
+    img{
+       transform: rotate(-25deg);
+      margin-top: -100px;
+        margin-left: -300px;
+    }
+      
+      .overlay{
+        transform: rotate(-25deg);
+        height: 1000px;
+        width: 800px;
+        position: absolute;
+        top: -50px;
+        left: 0;
+        background: black;
+        opacity: 0;
+        color: white;
+        -webkit-transition: opacity .5s;
+        transition: opacity .5s;
+        vertical-align: middle;
+        text-align:start;
+        }
+        .overlay:hover{
+          opacity: .6;
+        }
+      
+      
+    #d0{
+        left: -180px;
+        
+      }
+      
+      #d1{
+        left: 40px;
+      } 
+      
+       #d2{
+        left: 260px;
+      
+      } 
+      
+       #d3{
+        left: 480px;
+      
+      } 
+      
+      #d4{
+        left: 700px;
+      
+      } 
+      
+  
+  
+    
+
