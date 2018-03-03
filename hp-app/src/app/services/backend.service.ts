@@ -18,6 +18,6 @@ export class BackendService {
   //    .map(res => res.json());
   // }
   getUsersById(): Observable<any> {
-    return this.http.get('http://localhost:3000/users').map((response: Response) => console.log(response));
+     return this.http.get('http://localhost:3000/users');
   }
 }
