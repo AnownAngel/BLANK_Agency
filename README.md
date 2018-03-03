@@ -10,7 +10,7 @@ It currently shows companies some of my qualities and technologies I used in the
 
 </br>
 #1 CarreraGame written in java - used IDE: eclipse oxygen2;
-
+</br>
 #2 hp-app written in typescript with angular - used IDE: visual code;
 
 #3 Car.ts obvious written in typescript - used IDE: visual code;
