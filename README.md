@@ -14,14 +14,3 @@ It currently shows companies some of my qualities and technologies I used in the
 #2 hp-app written in typescript with angular - used IDE: visual code;
 
 #3 Car.ts obvious written in typescript - used IDE: visual code;
-
-
-
-
-</br></br></br>
-
-
-
-
-
-Had to renew this repository - some bugs appeared. Its history of commits is lost but it will be updated anyway - so a clean documentation can still be witnessed.
