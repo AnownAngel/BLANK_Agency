@@ -2,7 +2,7 @@
 
 I know its not recommended to add more projects to one repository but my CV will be more clean. Later on if projects will extend some volume they will get their own repository.
 
-</br></br></br></br></br>
+</br></br></br></br>
 
 
 This project will never be finished.
@@ -18,7 +18,7 @@ It currently shows companies some of my qualities and technologies I used in the
 
 
 
-</br></br></br></br></br></br></br></br></br></br></br></br>
+</br></br></br></br></br></br></br>
 
 
 
