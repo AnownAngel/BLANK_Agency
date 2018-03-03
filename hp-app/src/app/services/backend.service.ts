@@ -17,7 +17,7 @@ export class BackendService {
   //  return this.http.get(this.dummyUrl)
   //    .map(res => res.json());
   // }
-  getUsersById() {
-    return this.http.get('http://localhost:3000/users').subscribe(res => console.log(res));
+  getUsersById(): Observable<any> {
+    return this.http.get('http://localhost:3000/users').map((response: Response) => console.log(response));
   }
 }

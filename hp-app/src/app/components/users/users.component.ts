@@ -30,8 +30,8 @@ export class UsersComponent implements OnInit {
   // });
   // }
   getUsersById() {
-    this.backendService.getUsersById().subscribe(users => {
-      this.name = users[0];
+    this.backendService.getUsersById().subscribe(data => {
+      this.name = data[0];
   });
   }
   onSelect(user: User): void {
