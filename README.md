@@ -2,25 +2,23 @@
 
 I know its not recommended to add more projects to one repository but my CV will be more clean. Later on if projects will extend some volume they will get their own repository.
 
-
-
-
+</br></br></br></br></br>
 
 
 This project will never be finished.
 It currently shows companies some of my qualities and technologies I used in the past or I am working with at the present time so they can determine a lot faster if I fulfill their demands.
 
-
+</br></br>
 #1 CarreraGame written in java - used IDE: eclipse oxygen2;
-
+</br>
 #2 hp-app written in typescript with angular - used IDE: visual code;
-
+</br>
 #3 Car.ts obvious written in typescript - used IDE: visual code;
 
 
 
 
-
+</br></br></br></br></br></br></br></br></br></br></br></br>
 
 
 
