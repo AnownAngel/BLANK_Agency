@@ -14,30 +14,32 @@ export class UsersComponent implements OnInit {
 
   // users = USERS;
   // private date: any;
+  data: any;
   selectedUser: User;
   private name: string;
   private id: number;
   private age: number;
- 
+  @Input() id2 = '';
+
   constructor(private backendService: BackendService) {
 
   }
 
   ngOnInit() {
-    this.getUsersById();
+    this.getUsers();
   }
   // getUsers() {
   //  this.backendService.getUsersById().subscribe(data => {
   //    this.name = data[0].Group.GroupName;
   // });
   // }
-  getUsersById() {
-    this.backendService.getUsersById().subscribe(data  => {
-      const response = data.json();
-      console.log(response);
+  getUsers() {
+    this.backendService.getUsers().subscribe(data  => {
+      console.log(data);
       this.id = data[0];
       this.age = data[0];
       this.name = data[0];
+      this.data = data;
     });
   }
   onSelect(user: User): void {

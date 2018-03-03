@@ -24,8 +24,16 @@ body{
   }
 .row{
     color: white;
+    padding-bottom: 35px;
 }
   
 h2{
     color: white;
+}
+
+th{
+  padding-right: 15px;
+}
+td{
+  padding-right: 15px;
 }
