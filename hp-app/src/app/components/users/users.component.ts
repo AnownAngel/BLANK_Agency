@@ -27,6 +27,7 @@ export class UsersComponent implements OnInit {
 
   ngOnInit() {
     this.getUsers();
+    this.getDbUsers();
   }
   // getUsers() {
   //  this.backendService.getUsersById().subscribe(data => {
@@ -44,5 +45,13 @@ export class UsersComponent implements OnInit {
   }
   onSelect(user: User): void {
     this.selectedUser = user;
+  }
+  getDbUsers() {
+    this.backendService.getDbUsers().subscribe(data => {
+      console.log(data);
+      this.name = data[0];
+      this.id = data[0];
+      this.data = data;
+    });
   }
 }

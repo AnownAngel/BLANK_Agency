@@ -7,7 +7,7 @@ import 'rxjs/add/operator/map';
 export class BackendService {
   private dummyUrl = 'http://localhost/3000/users';
 
-  constructor(private http: Http) {}
+  constructor(private http: Http) { }
 
   getAll(): Observable<any> {
     return this.http.get(this.dummyUrl + '?_sort=id&_order=desc')
@@ -18,6 +18,9 @@ export class BackendService {
   //    .map(res => res.json());
   // }
   getUsers(): Observable<any> {
-     return this.http.get('http://localhost:3000/users').map(res => res.json());
+    return this.http.get('http://localhost:3000/users').map(res => res.json());
+  }
+  getDbUsers(): Observable<any> {
+    return this.http.get('http://127.0.0.1').map(res => res.json());
   }
 }
