@@ -15,11 +15,16 @@ export class UsersComponent implements OnInit {
   // users = USERS;
   // private date: any;
   data: any;
+  data2: any;
   selectedUser: User;
   private name: string;
+  private name2: string;
   private id: number;
+  private id2: number;
   private age: number;
-  @Input() id2 = '';
+  private age2: number;
+
+  // @Input() id2 = '';
 
   constructor(private backendService: BackendService) {
 
@@ -49,9 +54,9 @@ export class UsersComponent implements OnInit {
   getDbUsers() {
     this.backendService.getDbUsers().subscribe(data => {
       console.log(data);
-      this.name = data[0];
-      this.id = data[0];
-      this.data = data;
+      this.name2 = data[0];
+      this.id2 = data[0];
+      this.data2 = data;
     });
   }
 }

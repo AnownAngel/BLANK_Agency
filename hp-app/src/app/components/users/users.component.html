@@ -13,5 +13,10 @@
   </div>
 
   <div class="row">
-<button onclick="getDbUsers()">Click Me</button>
+      <ul class="users">
+
+          <li *ngFor="let user of data2">
+              {{user.name}}
+            </li>
+  </ul>
 </div>
