@@ -1,5 +1,6 @@
 
 var express = require('express');
+var mysql      = require('mysql');
 var cors = require('cors');
 var app = express();
 app.use(express.static('public'));
@@ -7,33 +8,26 @@ app.use(cors());
 
 
 
-var mysql = require('mysql');
+app.get('/hallo', function (req, res) {
 var connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: 'SqL!2018',
+  host     : 'localhost',
+  user     : 'root',
+  password : '',
   database: 'users'
 });
 
-connection.connect();
-var query = 'SELECT * FROM USERS';
 
-connection.query(query, function (err, rows, fields) {
-  if (err) throw err;
-  app.get('/hallo', function (req, res) {
-    console.log(users.users);
-    for (var i in rows) {
-      console.log('User ID: ', rows[i].id, 'User Name:', rows[i].name);
-      var id = rows[i].id;
-      var name = rows[i].name;
-  }
-    res.send(id, name);
-  
-  });
 
+  connection.connect();
+connection.query('SELECT * FROM users', function(err, rows) {
+  console.log(rows);
+  res.send(rows);
+});
+connection.end();
 });
 
-connection.end();
+
+
 
 
 
