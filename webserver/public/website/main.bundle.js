@@ -551,7 +551,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/user-detail/user-detail.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"user\">\r\n\r\n    <h2>{{ user.name | uppercase }} Details</h2>\r\n    <div><span>id: </span>{{user.id}}</div>\r\n    <div><span>age: </span>{{user.age}}</div>\r\n  \r\n  </div>"
+module.exports = "<div *ngIf=\"user\">\r\n\r\n    <h2>{{ user.name | uppercase }} Express Static Data User Details</h2>\r\n    <div><span>id: </span>{{user.id}}</div>\r\n    <div><span>age: </span>{{user.age}}</div>\r\n  \r\n  </div>\r\n\r\n  <div *ngIf=\"dbUser\">\r\n\r\n      <h2>{{ dbUser.name | uppercase }} Database User Details</h2>\r\n      <div><span>id: </span>{{dbUser.id}}</div>\r\n      <div><span>age: </span>{{dbUser.age}}</div>\r\n    \r\n    </div>"
 
 /***/ }),
 
@@ -573,6 +573,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var UserDetailComponent = /** @class */ (function () {
     function UserDetailComponent() {
     }
@@ -580,8 +581,12 @@ var UserDetailComponent = /** @class */ (function () {
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1__user__["a" /* User */])
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1__user__["b" /* User */])
     ], UserDetailComponent.prototype, "user", void 0);
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1__user__["a" /* DbUser */])
+    ], UserDetailComponent.prototype, "dbUser", void 0);
     UserDetailComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-user-detail',
@@ -601,11 +606,18 @@ var UserDetailComponent = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return User; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return User; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DbUser; });
 var User = /** @class */ (function () {
     function User() {
     }
     return User;
+}());
+
+var DbUser = /** @class */ (function () {
+    function DbUser() {
+    }
+    return DbUser;
 }());
 
 
@@ -633,7 +645,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/users/users.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-sm\">\r\n      <h2>Registered Users</h2>\r\n\r\n      <ul class=\"users\">\r\n        <li *ngFor=\"let user of data\" [class.selected]=\"user === selectedUser\" (click)=\"onSelect(user)\">\r\n          {{user.name}}\r\n        </li>\r\n      </ul>\r\n\r\n      <app-user-detail [user]=\"selectedUser\"></app-user-detail>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n\r\n</div>"
+module.exports = "<div class=\"container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-sm\">\r\n      <h2>Registered Users</h2>\r\n\r\n      <ul class=\"users\">\r\n        <li *ngFor=\"let user of data\" [class.selected]=\"user === selectedUser\" (click)=\"onSelect(user)\">\r\n          {{user.name}}\r\n        </li>\r\n      </ul>\r\n      <app-user-detail [user]=\"selectedUser\"></app-user-detail>\r\n    </div>\r\n  </div>\r\n\r\n <div class=\"row\">\r\n      <ul class=\"users\">\r\n\r\n          <li *ngFor=\"let dbUser of data2\" [class.selected]=\"dbUser === selectedDbUser\" (click)=\"onSelectDbUser(dbUser)\">\r\n              {{dbUser.name}}\r\n            </li>\r\n  </ul>\r\n  <app-user-detail [dbUser]=\"selectedDbUser\"></app-user-detail>\r\n</div>\r\n</div>"
 
 /***/ }),
 
@@ -654,14 +666,16 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+// import { USERS } from '../mock-users';
 
 var UsersComponent = /** @class */ (function () {
+    // @Input() id2 = '';
     function UsersComponent(backendService) {
         this.backendService = backendService;
-        this.id2 = '';
     }
     UsersComponent.prototype.ngOnInit = function () {
         this.getUsers();
+        this.getDbUsers();
     };
     // getUsers() {
     //  this.backendService.getUsersById().subscribe(data => {
@@ -681,10 +695,18 @@ var UsersComponent = /** @class */ (function () {
     UsersComponent.prototype.onSelect = function (user) {
         this.selectedUser = user;
     };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["D" /* Input */])(),
-        __metadata("design:type", Object)
-    ], UsersComponent.prototype, "id2", void 0);
+    UsersComponent.prototype.onSelectDbUser = function (dbUser) {
+        this.selectedDbUser = dbUser;
+    };
+    UsersComponent.prototype.getDbUsers = function () {
+        var _this = this;
+        this.backendService.getDbUsers().subscribe(function (data) {
+            console.log(data);
+            _this.name2 = data[0];
+            _this.id2 = data[0];
+            _this.data2 = data;
+        });
+    };
     UsersComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
             selector: 'app-users',
@@ -737,7 +759,10 @@ var BackendService = /** @class */ (function () {
     //    .map(res => res.json());
     // }
     BackendService.prototype.getUsers = function () {
-        return this.http.get('http://localhost:3000/users').map(function (res) { return res.json(); });
+        return this.http.get('http://94.130.24.207:3000/users').map(function (res) { return res.json(); });
+    };
+    BackendService.prototype.getDbUsers = function () {
+        return this.http.get('http://94.130.24.207:3000/hallo').map(function (res) { return res.json(); });
     };
     BackendService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
