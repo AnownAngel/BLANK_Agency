@@ -1,7 +1,15 @@
 <div *ngIf="user">
 
-    <h2>{{ user.name | uppercase }} Details</h2>
+    <h2>{{ user.name | uppercase }} Express Static Data User Details</h2>
     <div><span>id: </span>{{user.id}}</div>
     <div><span>age: </span>{{user.age}}</div>
   
   </div>
+
+  <div *ngIf="dbUser">
+
+      <h2>{{ dbUser.name | uppercase }} Database User Details</h2>
+      <div><span>id: </span>{{dbUser.id}}</div>
+      <div><span>age: </span>{{dbUser.age}}</div>
+    
+    </div>

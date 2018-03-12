@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { User } from '../user';
-
+import { DbUser } from '../user';
 @Component({
   selector: 'app-user-detail',
   templateUrl: './user-detail.component.html',
@@ -8,7 +8,7 @@ import { User } from '../user';
 })
 export class UserDetailComponent implements OnInit {
   @Input() user: User;
-
+  @Input() dbUser: DbUser;
   constructor() { }
 
   ngOnInit() {

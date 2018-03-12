@@ -18,9 +18,9 @@ export class BackendService {
   //    .map(res => res.json());
   // }
   getUsers(): Observable<any> {
-    return this.http.get('http://localhost:3000/users').map(res => res.json());
+    return this.http.get('http://94.130.24.207:3000/users').map(res => res.json());
   }
-  getDbUsers(): Observable<any> {
-    return this.http.get('http://localhost:3000/hallo').map(res => res.json());
-  }
+ getDbUsers(): Observable<any> {
+    return this.http.get('http://localhost:3000/hallo');
+ }
 }

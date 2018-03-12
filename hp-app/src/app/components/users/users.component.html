@@ -12,11 +12,12 @@
     </div>
   </div>
 
-  <div class="row">
+ <div class="row">
       <ul class="users">
 
-          <li *ngFor="let user of data2">
-              {{user.name}}
+          <li *ngFor="let dbUser of data2" [class.selected]="dbUser === selectedDbUser" (click)="onSelectDbUser(dbUser)">
+              {{dbUser.name}}
             </li>
   </ul>
+  <app-user-detail [dbUser]="selectedDbUser"></app-user-detail>
 </div>

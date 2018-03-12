@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { User } from '../user';
-import { USERS } from '../mock-users';
+import { DbUser } from '../user';
+// import { USERS } from '../mock-users';
 import { BackendService } from '../../services/backend.service';
 import { Observable } from 'rxjs/Observable';
 @Component({
@@ -17,6 +18,7 @@ export class UsersComponent implements OnInit {
   data: any;
   data2: any;
   selectedUser: User;
+  selectedDbUser: DbUser;
   private name: string;
   private name2: string;
   private id: number;
@@ -40,7 +42,7 @@ export class UsersComponent implements OnInit {
   // });
   // }
   getUsers() {
-    this.backendService.getUsers().subscribe(data  => {
+    this.backendService.getUsers().subscribe(data => {
       console.log(data);
       this.id = data[0];
       this.age = data[0];
@@ -51,12 +53,15 @@ export class UsersComponent implements OnInit {
   onSelect(user: User): void {
     this.selectedUser = user;
   }
+  onSelectDbUser(dbUser: DbUser): void {
+    this.selectedDbUser = dbUser;
+  }
   getDbUsers() {
     this.backendService.getDbUsers().subscribe(data => {
       console.log(data);
       this.name2 = data[0];
       this.id2 = data[0];
-      this.data2 = data;
+      this.data2 = data.json();
     });
   }
 }
