@@ -1,13 +1,13 @@
 
-var express    = require('express');
-var app        = express();
-var mysql      = require('mysql');
+var express = require('express');
+var app = express();
+var mysql = require('mysql');
 var bodyParser = require('body-parser');
 var cors = require('cors');
 
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use(cors());
 
@@ -28,23 +28,24 @@ connection.connect();
 
 
 app.get('/hallo', function (req, res) {
-  
+
   connection.query('SELECT * FROM users', function (err, rows) {
     console.log(rows);
-    res.send(rows);   
+    res.send(rows);
   });
-  
+
 });
 
 
 
-app.post('/lol', function(req, res){
-  var username=req.body.name;
+app.post('/lol', function (req, res) {
+  var username = req.body.name;
   var usrname = JSON.stringify(username);
-  connection.query('INSERT INTO users (id, name, password, email, age) VALUES (0, "usrname", "koks", "koks@koks.de", 27)');
+  connection.query('INSERT INTO users VALUES (0,' + usrname + ', "koks", "koks@koks.de", 27)', function (err, rows) {
     console.log(usrname);
-    console.log(username);
   });
+
+});
 
 
 
