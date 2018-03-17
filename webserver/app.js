@@ -1,30 +1,52 @@
 
-var express = require('express');
-var mysql = require('mysql');
+var express    = require('express');
+var app        = express();
+var mysql      = require('mysql');
+var bodyParser = require('body-parser');
 var cors = require('cors');
-var app = express();
+
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
 app.use(cors());
 
 
 
+var connection = mysql.createConnection({
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'users'
+});
+
+connection.connect();
+
+
+
+
+
+
 app.get('/hallo', function (req, res) {
-  var connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'users'
-  });
-
-
-
-  connection.connect();
+  
   connection.query('SELECT * FROM users', function (err, rows) {
     console.log(rows);
-    res.send(rows);
+    res.send(rows);   
   });
-  connection.end();
+  
 });
+
+
+
+app.post('/lol', function(req, res){
+  var username=req.body.name;
+  var usrname = JSON.stringify(username);
+  connection.query('INSERT INTO users (id, name, password, email, age) VALUES (0, "usrname", "koks", "koks@koks.de", 27)');
+    console.log(usrname);
+    console.log(username);
+  });
+
+
 
 
 

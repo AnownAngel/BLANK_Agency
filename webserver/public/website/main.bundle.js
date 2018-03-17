@@ -645,7 +645,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/components/users/users.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-sm\">\r\n      <h2>Registered Users</h2>\r\n\r\n      <ul class=\"users\">\r\n        <li *ngFor=\"let user of data\" [class.selected]=\"user === selectedUser\" (click)=\"onSelect(user)\">\r\n          {{user.name}}\r\n        </li>\r\n      </ul>\r\n      <app-user-detail [user]=\"selectedUser\"></app-user-detail>\r\n    </div>\r\n  </div>\r\n\r\n <div class=\"row\">\r\n      <ul class=\"users\">\r\n\r\n          <li *ngFor=\"let dbUser of data2\" [class.selected]=\"dbUser === selectedDbUser\" (click)=\"onSelectDbUser(dbUser)\">\r\n              {{dbUser.name}}\r\n            </li>\r\n  </ul>\r\n  <app-user-detail [dbUser]=\"selectedDbUser\"></app-user-detail>\r\n</div>\r\n</div>"
+module.exports = "<div class=\"container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-sm\">\r\n      <h2>Registered Users</h2>\r\n\r\n      <ul class=\"users\">\r\n        <li *ngFor=\"let user of data\" [class.selected]=\"user === selectedUser\" (click)=\"onSelect(user)\">\r\n          {{user.name}}\r\n        </li>\r\n      </ul>\r\n      <app-user-detail [user]=\"selectedUser\"></app-user-detail>\r\n    </div>\r\n  </div>\r\n\r\n <div class=\"row\">\r\n      <ul class=\"users\">\r\n\r\n          <li *ngFor=\"let dbUser of data2\" [class.selected]=\"dbUser === selectedDbUser\" (click)=\"onSelectDbUser(dbUser)\">\r\n              {{dbUser.name}}\r\n            </li>\r\n  </ul>\r\n  <app-user-detail [dbUser]=\"selectedDbUser\"></app-user-detail>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -704,7 +704,7 @@ var UsersComponent = /** @class */ (function () {
             console.log(data);
             _this.name2 = data[0];
             _this.id2 = data[0];
-            _this.data2 = data;
+            _this.data2 = data.json();
         });
     };
     UsersComponent = __decorate([
@@ -762,7 +762,7 @@ var BackendService = /** @class */ (function () {
         return this.http.get('http://94.130.24.207:3000/users').map(function (res) { return res.json(); });
     };
     BackendService.prototype.getDbUsers = function () {
-        return this.http.get('http://94.130.24.207:3000/hallo').map(function (res) { return res.json(); });
+        return this.http.get('http://localhost:3000/hallo');
     };
     BackendService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["A" /* Injectable */])(),
