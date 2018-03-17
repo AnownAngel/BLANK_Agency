@@ -6,7 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProjectComponent } from '../components/project/project.component';
 import { UsersComponent } from '../components/users/users.component';
 import { RegistrationComponent } from '../components/registration/registration.component';
-import { AppComponent } from '../components/app/app.component';
+import { AppComponent } from '../app.component';
 import { StartpageComponent } from '../components/startpage/startpage.component';
 import { LoginComponent } from '../components/login/login.component';
 

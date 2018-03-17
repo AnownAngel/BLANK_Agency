@@ -3,10 +3,10 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing/app-routing.module';
-
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { AppComponent } from './components/app/app.component';
+import { AppComponent } from '../app/app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { StartpageComponent } from './components/startpage/startpage.component';
 import { RegistrationComponent } from './components/registration/registration.component';

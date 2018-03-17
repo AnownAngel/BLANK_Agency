@@ -1,6 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { User } from '../user';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { DbUser } from '../user';
+import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
+import { User2 } from './user.d';
 // import { USERS } from '../mock-users';
 import { BackendService } from '../../services/backend.service';
 import { Observable } from 'rxjs/Observable';
@@ -15,18 +18,16 @@ export class UsersComponent implements OnInit {
 
   // users = USERS;
   // private date: any;
+  users: User2[];
   data: any;
   data2: any;
+  data3: any;
   selectedUser: User;
   selectedDbUser: DbUser;
   private name: string;
-  private name2: string;
   private id: number;
-  private id2: number;
   private age: number;
-  private age2: number;
-
-  // @Input() id2 = '';
+  private newUser: any;
 
   constructor(private backendService: BackendService) {
 
@@ -41,13 +42,13 @@ export class UsersComponent implements OnInit {
   //    this.name = data[0].Group.GroupName;
   // });
   // }
-  getUsers() {
+  getUsers(): void {
     this.backendService.getUsers().subscribe(data => {
       console.log(data);
       this.id = data[0];
       this.age = data[0];
       this.name = data[0];
-      this.data = data;
+      this.data = data.json();
     });
   }
   onSelect(user: User): void {
@@ -56,12 +57,16 @@ export class UsersComponent implements OnInit {
   onSelectDbUser(dbUser: DbUser): void {
     this.selectedDbUser = dbUser;
   }
-  getDbUsers() {
+  getDbUsers(): void {
     this.backendService.getDbUsers().subscribe(data => {
       console.log(data);
-      this.name2 = data[0];
-      this.id2 = data[0];
+      this.name = data[0];
+      this.id = data[0];
       this.data2 = data.json();
     });
   }
+  public addUser(name: string): void {
+    const newUser: User2 = { name } as User2;
+    this.backendService.addUser(newUser).subscribe(data => this.users.push(newUser));
+    }
 }

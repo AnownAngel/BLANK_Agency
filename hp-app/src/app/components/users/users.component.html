@@ -20,4 +20,12 @@
             </li>
   </ul>
   <app-user-detail [dbUser]="selectedDbUser"></app-user-detail>
+
+
+
+  <form action="/lol" method="post">
+    <label for="name">Enter your name in the database</label>
+    <input [(ngModel)]="user" (change)="addUser(user)" name="user"/>
+
+    </form>
 </div>
