@@ -15,3 +15,11 @@ It is currently showing companies some of my qualities and technologies I used i
 
 #3 Car.ts obvious written in typescript - used IDE: visual code;</br>
 #4 webserver written in javascript with expressjs - used IDE: visual code;
+
+
+
+
+
+########################################### NEW TASK ###########################################</br>
+                                      Which OAuth2 Tool?</br>
+                                Grant, Passport, node-oauth2-server
