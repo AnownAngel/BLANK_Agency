@@ -21,5 +21,4 @@ It is currently showing companies some of my qualities and technologies I used i
 
 
 ####################################### NEW TASK #######################################</br>
-                                    Which OAuth2 Tool?</br>
-                             Grant, Passport, node-oauth2-server
+                                   node-oauth2-server
