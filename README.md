@@ -21,7 +21,6 @@ It is currently showing companies some of my qualities and technologies I used i
 
 
 ####################################### NEW TASK #######################################</br>
-                                    <center>
-                                    Implementing HTTPS</br>
-                                   node-oauth2-server
-                                   </center>
+<center>HTTPS</center></br>
+<center>oauth2-server</center>
+                                   
