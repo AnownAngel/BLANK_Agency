@@ -1,3 +1,8 @@
 p{
     color: white;
+    font-size: 13px;
+}
+.signature{
+    color: rgb(177, 103, 80);
+    margin: 0 0 15px;
 }

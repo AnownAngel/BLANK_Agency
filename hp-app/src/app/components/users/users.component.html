@@ -25,7 +25,8 @@
 
   <form action="/lol" method="post">
     <label for="name">Enter your name in the database</label>
-    <input [(ngModel)]="user" (change)="addUser(user)" name="user"/>
+    <input [(ngModel)]="user" name="user"/>
+    <button style="color: black" (click)="addUser(user)">Add User</button>
 
     </form>
 </div>
