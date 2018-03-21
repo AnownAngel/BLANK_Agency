@@ -21,6 +21,9 @@ It is currently showing companies some of my qualities and technologies I used i
 
 
 ####################################### NEW TASK #######################################</br>
-<center>HTTPS</center></br>
-<center>oauth2-server</center>
+nginx refresh routes 404 error</br>
+sign up as a teacher --> ngform/ngmodel 1/2-way databinding get used to it</br>
+encrypt certification</br>
+HTTPS</br>
+oauth2-server
                                    
