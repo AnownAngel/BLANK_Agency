@@ -23,7 +23,8 @@ It is currently showing companies some of my qualities and technologies I used i
 ####################################### NEW TASK #######################################</br>
 nginx refresh routes 404 error</br>
 sign up as a teacher --> ngform/ngmodel 1/2-way databinding get used to it</br>
-encrypt certification</br>
-HTTPS</br>
+letsencrypt certification check</br>
+https check</br>
+domain check</br>
 oauth2-server
                                    
