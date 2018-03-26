@@ -1,4 +1,6 @@
-# BLANK_Agency
+# BLANK_Agency<br>
+
+https://www.blank-agency.org<br>
 
 I know its not recommended to add more projects to one repository but my CV will be more clean. Later on if projects will extend some volume they will get their own repository.
 
@@ -21,7 +23,7 @@ It is currently showing companies some of my qualities and technologies I used i
 
 
 ####################################### NEW TASK #######################################</br>
-nginx refresh routes 404 error</br>
+nginx refresh routes 404 error check</br>
 sign up as a teacher --> ngform/ngmodel 1/2-way databinding get used to it</br>
 letsencrypt certification check</br>
 https check</br>
