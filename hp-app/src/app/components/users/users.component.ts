@@ -3,10 +3,11 @@ import { User } from '../user';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { DbUser } from '../user';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
-import { User2 } from './user.d';
+import { UserUsers } from './user.d';
 // import { USERS } from '../mock-users';
 import { BackendService } from '../../services/backend.service';
 import { Observable } from 'rxjs/Observable';
+
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
@@ -18,10 +19,9 @@ export class UsersComponent implements OnInit {
 
   // users = USERS;
   // private date: any;
-  users: User2[];
+  users: UserUsers[];
   data: any;
   data2: any;
-  data3: any;
   selectedUser: User;
   selectedDbUser: DbUser;
   private name: string;
@@ -65,8 +65,8 @@ export class UsersComponent implements OnInit {
       this.data2 = data.json();
     });
   }
-  public addUser(name: string): void {
-    const newUser: User2 = { name } as User2;
-    this.backendService.addUser(newUser).subscribe(data => this.users.push(newUser));
+  public addUser2(name: string): void {
+    const newUser: UserUsers = { name } as UserUsers;
+    this.backendService.addUser2(newUser).subscribe(data => this.users.push(newUser));
     }
 }

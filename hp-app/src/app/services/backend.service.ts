@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { User2 } from 'c:/Daten/Projects/job repository/BLANK_Agency/hp-app/src/app/components/users/user.d'
+import { UserUsers } from '../components/users/user.d';
+import { UserReg } from '../components/registration/userReg.d';
+import { Test } from '../components/test/test.d';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 import { HttpHeaders } from '@angular/common/http';
+import { NgForm } from '@angular/forms';
 
 
 @Injectable()
@@ -31,15 +34,19 @@ export class BackendService {
   //    .map(res => res.json());
   // }
   getUsers(): Observable<Response> {
-    return this.http.get('http://94.130.24.207:3000/users');
+    return this.http.get('http://localhost:3000/users');
   }
   getDbUsers(): Observable<Response> {
     return this.http.get('http://localhost:3000/hallo');
   }
 
-  /** POST: add a new hero to the database */
-  addUser(user: User2): Observable<Response> {
+  /** POST: add a new user to the database */
+
+
+  addUser2(user: UserUsers): Observable<Response> {
     return this.http.post('http://localhost:3000/lol', user);
   }
-
+  addTest(test: Test): Observable<Response> {
+    return this.http.post('http://localhost:3000/test', test);
+  }
 }

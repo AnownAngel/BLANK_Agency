@@ -14,6 +14,7 @@ import { UsersComponent } from './components/users/users.component';
 import { ProjectComponent } from './components/project/project.component';
 import { LoginComponent } from './components/login/login.component';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
+import { TestComponent } from './components/test/test.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { UserDetailComponent } from './components/user-detail/user-detail.compon
     StartpageComponent,
     LoginComponent,
     UserDetailComponent,
+    TestComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

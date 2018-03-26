@@ -7,26 +7,33 @@
         <li *ngFor="let user of data" [class.selected]="user === selectedUser" (click)="onSelect(user)">
           {{user.name}}
         </li>
+
       </ul>
       <app-user-detail [user]="selectedUser"></app-user-detail>
     </div>
   </div>
 
- <div class="row">
-      <ul class="users">
+  <div class="row">
+    <ul class="users">
 
-          <li *ngFor="let dbUser of data2" [class.selected]="dbUser === selectedDbUser" (click)="onSelectDbUser(dbUser)">
-              {{dbUser.name}}
-            </li>
-  </ul>
-  <app-user-detail [dbUser]="selectedDbUser"></app-user-detail>
+      <li *ngFor="let dbUser of data2" [class.selected]="dbUser === selectedDbUser" (click)="onSelectDbUser(dbUser)">
+        {{dbUser.name}}
+      </li>
+      <li>
+        {{ user }}
+      </li>
+    </ul>
+    <app-user-detail [dbUser]="selectedDbUser"></app-user-detail>
 
 
 
-  <form action="/lol" method="post">
-    <label for="name">Enter your name in the database</label>
-    <input [(ngModel)]="user" name="user"/>
-    <button style="color: black" (click)="addUser(user)">Add User</button>
+    <form action="/lol" method="post">
+      <label for="name">Enter your name in the database</label>
+      <input [(ngModel)]="user" name="user" />
+      <button style="color: black" (click)="addUser2(user)">Add User</button>
 
     </form>
-</div>
+<br><br><br><br><br>
+    
+
+  </div>

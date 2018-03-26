@@ -1,4 +1,4 @@
-export interface UserUsers {
+export interface Test {
     id: number;
     name: string;
     password: string;
