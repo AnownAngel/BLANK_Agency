@@ -1,29 +1,36 @@
 
 var express = require('express'),
-app = express();
-mysql = require('mysql');
-bodyParser = require('body-parser');
+app = express(),
+mysql = require('mysql'),
+bodyParser = require('body-parser'),
 cors = require('cors');
-oauthserver = require('oauth2-server');
-
+var path = require('path');
+// oauthserver = require('oauth2-server');
 
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('public'));
+
 app.use(cors());
+/* app.use(function(req, res, next) {
+  if (allowed(req.ip))
+    next();
+  else
+    res.status(403).end('forbidden');
+}); */
 
 /* app.oauth = oauthserver({
   model: require('./model'), 
   grants: ['password'],
   debug: true
-}); 
+}); */
+ app.use( express.static(__dirname + '/public/website'));
 
-app.all('/oauth/token', app.oauth.grant());*/
+// app.all('/oauth/token', app.oauth.grant());
 
 
 var connection = mysql.createConnection({
-  host: 'localhost',
+  host: '127.0.0.1',
   user: 'root',
   password: '',
   database: 'users'
@@ -32,27 +39,32 @@ var connection = mysql.createConnection({
 connection.connect();
 
 
-var con2 = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'users_test'
+
+app.get('/', function(req, res){
+	res.sendFile(path.join(__dirname + '/public/website/index.html'));
 });
-
-
-con2.connect();
-
-
-
-
-
+app.get('/users', function(req, res){
+	res.sendFile(path.join(__dirname + '/public/website/index.html'));
+});
+app.get('/project', function(req, res){
+	res.sendFile(path.join(__dirname + '/public/website/index.html'));
+});
+app.get('/test', function(req, res){
+	res.sendFile(path.join(__dirname + '/public/website/index.html'));
+});
+app.get('/login', function(req, res){
+	res.sendFile(path.join(__dirname + '/public/website/index.html'));
+});
+app.get('/registration', function(req, res){
+	res.sendFile(path.join(__dirname + '/public/website/index.html'));
+});
 
 
 app.get('/hallo', /* app.oauth.authorise(), */ function (req, res) {
 
-  connection.query('SELECT * FROM users', function (err, rows) {
+  connection.query('SELECT * FROM tbl_test', function (err, rows) {
     console.log(rows);
-    res.send(rows);
+    res.send(JSON.stringify(rows));
   });
 
 });
@@ -61,9 +73,11 @@ app.get('/hallo', /* app.oauth.authorise(), */ function (req, res) {
 
 app.post('/lol', /* app.oauth.authorise(), */ function (req, res) {
   var username = req.body.name;
-  var usrname = JSON.stringify(username);
+
+var usrname = JSON.stringify(username);
+console.log(usrname);
   connection.query('INSERT INTO users VALUES (0,' + usrname + ', "koks", "koks@koks.de", 27)', function (err, rows) {
-    console.log(usrname);
+    
   });
 
 });
@@ -72,10 +86,15 @@ app.post('/lol', /* app.oauth.authorise(), */ function (req, res) {
 
 
 app.post('/test', /* app.oauth.authorise(), */ function (req, res) {
-  var test = req.body.name;
-  var test2 = JSON.stringify(test);
-  con2.query('INSERT INTO tbl_test VALUES (' + test2 + ')', function (err, rows) {
-    console.log(test2);
+  var testName = req.body.name;
+  var testPw = req.body.password;
+  var testEmail = req.body.email;
+  var testAge = req.body.age;
+  var testName2 = JSON.stringify(testName);
+  var testPw2 = JSON.stringify(testPw);
+  var testEmail2 = JSON.stringify(testEmail);
+  var testAge2 = JSON.stringify(testAge);
+  connection.query('INSERT INTO tbl_test (Name, Password, Email, Age) VALUES (' + testName2 + ', ' + testPw2 + ', ' + testEmail2 + ', ' + testAge2 + ')', function (err, rows) {
   });
 
 });
@@ -130,13 +149,12 @@ var users4 = [
 ] */
 
 
-app.get('/users', function (req, res) {
+app.get('/data', function (req, res) {
   console.log(users.users);
   res.send(users.users);
 
 });
 
-// app.use(app.oauth.errorHandler());
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');

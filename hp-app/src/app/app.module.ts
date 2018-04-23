@@ -12,9 +12,12 @@ import { StartpageComponent } from './components/startpage/startpage.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { UsersComponent } from './components/users/users.component';
 import { ProjectComponent } from './components/project/project.component';
-import { LoginComponent } from './components/login/login.component';
+import { LoginComponent } from './login/login.component';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
 import { TestComponent } from './components/test/test.component';
+import { AlertComponent } from './alert/alert.component';
+import { CerveauComponent } from './components/cerveau/cerveau.component';
+import { LoginRoutingModule } from './login/login-routing.module';
 
 
 @NgModule({
@@ -23,7 +26,7 @@ import { TestComponent } from './components/test/test.component';
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
     ],
   declarations: [
     AppComponent,
@@ -32,9 +35,11 @@ import { TestComponent } from './components/test/test.component';
     UsersComponent,
     RegistrationComponent,
     StartpageComponent,
-    LoginComponent,
     UserDetailComponent,
     TestComponent,
+    AlertComponent,
+    CerveauComponent,
+    LoginComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
