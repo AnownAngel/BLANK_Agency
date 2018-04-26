@@ -21,7 +21,7 @@ import { trigger, state, style, transition, animate, keyframes, query } from '@a
 
         // move page off screen right on leave
         query(':leave',
-          animate('1000ms ease-in',
+          animate('800ms ease-in',
             style({
               position: 'fixed',
               width: '100%',
@@ -32,7 +32,7 @@ import { trigger, state, style, transition, animate, keyframes, query } from '@a
 
         // move page in screen from left to right
         query(':enter',
-          animate('1000ms ease-in',
+          animate('2000ms ease-in',
             style({
               opacity: 1,
               transform: 'translateX(0%)'
