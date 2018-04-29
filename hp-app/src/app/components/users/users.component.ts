@@ -63,10 +63,11 @@ export class UsersComponent implements OnInit {
       this.name = data[0];
       this.id = data[0];
       this.data2 = data.json();
+
     });
   }
   public addUser2(name: string): void {
     const newUser: UserUsers = { name } as UserUsers;
     this.backendService.addUser2(newUser).subscribe(data => this.users.push(newUser));
-    }
+  }
 }

@@ -72,3 +72,6 @@ button:hover {
 .container{
     color: white;
 }
+.submitted-message{
+    text-align: center;
+}

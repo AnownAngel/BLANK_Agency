@@ -55,8 +55,8 @@ li{
 }
 
 
-a:active{
-    color:black !important;
+.active-link{
+    color:greenyellow !important;
 } 
 @media (min-width: 768px){
 .navbar-nav {

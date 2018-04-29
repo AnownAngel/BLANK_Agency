@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing/app-routing.module';
-import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from '../app/app.component';
@@ -15,6 +14,8 @@ import { ProjectComponent } from './components/project/project.component';
 import { LoginComponent } from './components/login/login.component';
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
 import { TestComponent } from './components/test/test.component';
+import { CerveauComponent } from './components/cerveau/cerveau.component';
+import { LazyTestComponent } from './lazy/lazy-test/lazy-test.component';
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import { TestComponent } from './components/test/test.component';
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
     ],
   declarations: [
     AppComponent,
@@ -32,9 +33,10 @@ import { TestComponent } from './components/test/test.component';
     UsersComponent,
     RegistrationComponent,
     StartpageComponent,
-    LoginComponent,
     UserDetailComponent,
     TestComponent,
+    CerveauComponent,
+    LoginComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

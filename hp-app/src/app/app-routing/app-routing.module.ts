@@ -10,10 +10,22 @@ import { AppComponent } from '../app.component';
 import { StartpageComponent } from '../components/startpage/startpage.component';
 import { LoginComponent } from '../components/login/login.component';
 import { TestComponent } from '../components/test/test.component';
+import { CerveauComponent } from '../components/cerveau/cerveau.component';
+
 const routes: Routes = [
-  { path: '', component: StartpageComponent, data: { animation: '' } },
-  { path: 'login', component: LoginComponent, data: { animation: 'login' } },
-  { path: 'project', component: ProjectComponent, data: { animation: 'project' } },
+  {
+    path: '', component: StartpageComponent, data: { animation: '' },
+    redirectTo: '',
+    pathMatch: 'full'
+},
+{
+  path: 'login', component: LoginComponent, data: { animation: 'login' },
+},
+{
+    path: 'lazy', data: { animation: 'lazy' },
+    loadChildren: 'app/lazy/lazy.module#LazyModule'
+},
+  { path: 'cerveau', component: CerveauComponent, data: { animation: 'cerveau' } },
   { path: 'users', component: UsersComponent, data: { animation: 'users' } },
   { path: 'registration', component: RegistrationComponent, data: { animation: 'registration' } },
   { path: 'test', component: TestComponent, data: { animation: 'test' } },

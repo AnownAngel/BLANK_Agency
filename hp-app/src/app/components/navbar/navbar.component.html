@@ -12,23 +12,30 @@
       <div class="nav navbar-nav">
         <ul class="nav navbar-nav">
           <li>
-            <a routerLink="/project" routerLinkActive="active">Project</a>
+            <a routerLink="/cerveau" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+              true}">Cerveau</a>
           </li>
           <li>
-            <a routerLink="/users" routerLinkActive="active">Users</a>
-          </li>
+              <a routerLink="/lazy" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+                true}">Lazy</a>
+            </li>
           <li>
-            <a routerLink="/test" routerLinkActive="active">Test</a>
+            <a routerLink="/users" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+              true}">Users</a>
           </li>
 
           <div class="nav navbar-nav navbar-right">
+
             <li class="nav navbar-nav">
-              <a class="right" routerLink="/login" routerLinkActive="active">
-                <span class="glyphicon glyphicon-log-in"></span> Login</a>
-            </li>
-            <li class="nav navbar-nav">
-              <a class="right" routerLink="/registration" routerLinkActive="active">
-                <span class="glyphicon glyphicon-user"></span> Sign Up As A Teacher</a>
+              <li>
+                <a routerLink="/registration" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+                  true}">
+                  <span class="glyphicon glyphicon-user"></span> Sign Up BLANK!</a>
+                  </li>
+                  <li>
+              <a class="button" routerLink="/login" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+                true}">
+                 Login</a>
             </li>
           </div>
         </ul>

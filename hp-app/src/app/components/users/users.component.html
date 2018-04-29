@@ -17,7 +17,7 @@
     <ul class="users">
 
       <li *ngFor="let dbUser of data2" [class.selected]="dbUser === selectedDbUser" (click)="onSelectDbUser(dbUser)">
-        {{dbUser.name}}
+        {{dbUser.Name}}
       </li>
       <li>
         {{ user }}
