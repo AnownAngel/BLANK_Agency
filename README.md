@@ -22,10 +22,10 @@ It is currently showing companies some of my qualities and technologies I used i
 
 
 ####################################### NEW TASKS #######################################</br><br>
-nginx refresh routes 404 error check</br>
-sign up as a teacher --> ngform/ngmodel formGroup? Multiple Params for click funct</br>
-letsencrypt certification check</br>
-https check</br>
-domain check</br>
-oauth2-server
+nginx refresh routes 404 error | check</br>
+sign up as a teacher --> ngform/ngmodel formGroup? Multiple Params for click funct | check</br>
+letsencrypt certification | check</br>
+https | check</br>
+domain | check</br>
+oauth2-server | 50%
                                    
