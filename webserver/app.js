@@ -1,59 +1,33 @@
-var express = require('express'),
-mysql = require('mysql'),
+let express = require('express'),
 bodyParser = require('body-parser'),
 cors = require('cors'),
-path = require('path');
+path = require('path'),
+util = require('util');
 
 
+let mysql = require('mysql'),
+config = require('./config'),
+db = config.sql,
+connection = mysql.createConnection(db);
+connection.connect();
 
-const OAuth2Server = require('oauth2-server');
-var user;
 
-const Request = OAuth2Server.Request;
-const Response = OAuth2Server.Response;
-
-var util = require('util');
-var authenticate = require('./authenticate')
-var app = express();
-
-var oauth = new OAuth2Server({
+let OAuth2Server = require('oauth2-server'),
+oauth = new OAuth2Server({
   model: require('./model.js')
 });
+Request = OAuth2Server.Request,
+Response = OAuth2Server.Response,
+authenticate = require('./authenticate');
 
-/*
-const MemoryStore = require('./model.js')
 
-  app.oauth = new OAuth2Server({
-  model: MemoryStore, 
-  grants: ['password'],
-  debug: true
-}); */
+let app = express();
 
 
 
 
-var connection = mysql.createConnection({
-  host: '127.0.0.1',
-  user: 'root',
-  password: '',
-  database: 'users'
-});
-
-connection.connect();
-/*
-
-//app.oauth = new OAuth2Server({model: model});
-const MemoryStore = require('./model.js')
-
-/*
-app.oauth = new OAuth2Server({
-	model: MemoryStore // See https://github.com/oauthjs/node-oauth2-server for specification
-})
-*/
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
-// app.use(oauth.authorize());
 app.use(cors());
 
 module.exports = function(app){
@@ -100,86 +74,6 @@ module.exports = function(app){
       });
   });
 }
-app.get('/secure', authenticate(), function(req,res){
-  res.json({message: 'Secure data'})
-});
-
-app.get('/hallo', authenticate(), function (req, res) {
-  connection.query('SELECT * FROM tbl_test', function (err, rows) {
-    console.log(rows);
-    res.send(JSON.stringify(rows));
-  });
-});
-/*
-
-app.use('/secret', function(req, res) {
-  res.send('Secret area');
-});
-*/
-/*
-
-
-
-// Post token.
-app.post('/oauth/token', app.oauth.token());
-
-// Get authorization.
-app.get('/oauth/authorize', function(req, res) {
-  // Redirect anonymous users to login page.
-  if (!req.app.locals.user) {
-    return res.redirect(util.format('/login?redirect=%s&client_id=%s&redirect_uri=%s', req.path, req.query.client_id, req.query.redirect_uri));
-  }
-
-  return render('authorize', {
-    client_id: req.query.client_id,
-    redirect_uri: req.query.redirect_uri
-  });
-});
-
-// Post authorization.
-app.post('/oauth/authorize', function(req, res) {
-  // Redirect anonymous users to login page.
-  if (!req.app.locals.user) {
-    return res.redirect(util.format('/login?client_id=%s&redirect_uri=%s', req.query.client_id, req.query.redirect_uri));
-  }
-
-  return app.oauth.authorize();
-});
-
-// Get login.
-app.get('/login', function(req) {
-  return render('login', {
-    redirect: req.query.redirect,
-    client_id: req.query.client_id,
-    redirect_uri: req.query.redirect_uri
-  });
-});
-
-// Post login.
-app.post('/login', function(req, res) {
-  // @TODO: Insert your own login mechanism.
-  if (req.body.email !== 'thom@nightworld.com') {
-    return render('login', {
-      redirect: req.body.redirect,
-      client_id: req.body.client_id,
-      redirect_uri: req.body.redirect_uri
-    });
-  }
-
-  // Successful logins should send the user back to /oauth/authorize.
-  var path = req.body.redirect || '/home';
-
-  return res.redirect(util.format('/%s?client_id=%s&redirect_uri=%s', path, req.query.client_id, req.query.redirect_uri));
-});
-
-// Get secret.
-app.get('/secret', app.oauth.authenticate(), function(req, res) {
-  // Will require a valid access_token.
-  res.send('Secret area');
-});
-*/
-
-
 
 
 
@@ -216,20 +110,16 @@ app.get('/registration', function(req, res){
 
 
 
+app.get('/secure', function(req,res){
+  res.json({message: 'Secure data'})
+});
 
-
-
-/*
-app.post('/lol', function (req, res) {
-  var username = req.body.name;
-
-var usrname = JSON.stringify(username);
-console.log(usrname);
-  connection.query('INSERT INTO users VALUES (0,' + usrname + ', "koks", "koks@koks.de", 27)', function (err, rows) {
-    
+app.get('/hallo', authenticate(), function (req, res) {
+  connection.query('SELECT * FROM tbl_test', function (err, rows) {
+    console.log(rows);
+    res.send(JSON.stringify(rows));
   });
-
-});*/
+});
 
 
 
@@ -275,14 +165,7 @@ var users = {
   ]
 };
 
-/* var users3 = {
-  "user":
-    {
-      "Name": "Shiro",
-      "Vorname": "Shibo",
-      "Alter": 42
-    }
-}
+
 
 var users4 = [
   {
@@ -295,7 +178,7 @@ var users4 = [
     "age": 22,
     "name": "Lisa"
   }
-] */
+];
 
 
 app.get('/data', function (req, res) {
