@@ -9,6 +9,7 @@ import { Inject, ViewChild, ElementRef } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
   title = 'BLΛNK Agency Ƹ̵̡Ӝ̵̨̄Ʒ';
+
   constructor() { }
 
   ngOnInit() {

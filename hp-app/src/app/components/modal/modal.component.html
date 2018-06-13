@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <button (click)="toggle()" id="bt">
+                {{buttonName}}
+            </button>
+            <div>
+                <ng-container *ngIf="show">
+                    <div>
+                        <div>
+                            <label>Name:</label>
+                            <div>
+                                <input id="tbname" name="yourname" />
+                            </div>
+                        </div>
+                        <div>
+                            <label>Email Address:</label>
+                            <div>
+                                <input name="email" id="email" />
+                            </div>
+                        </div>
+                        <div>
+                            <label>Additional Information (optional):</label>
+                            <div>
+                                <textarea rows="5" cols="46"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>

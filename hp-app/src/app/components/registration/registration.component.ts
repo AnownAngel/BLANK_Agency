@@ -14,7 +14,7 @@ import {NgForm} from '@angular/forms';
 
   <div class="row">
     <div class="col-sm">
-      <form #f="ngForm" ngNativeValidate (ngSubmit)="onSubmit(f)">
+      <form #f="ngForm" ngNativeValidate (ngSubmit)="onSubmit(f)" autocomplete="on">
         <div [hidden]="f.submitted">
         <h1>Sign Up</h1>
         <p>Please fill in this form to create an account.</p>
@@ -24,28 +24,29 @@ import {NgForm} from '@angular/forms';
         <label for="age">
           <b>Age</b>
         </label>
-        <input type="text" name="age" placeholder="Enter Age" ngModel required>
+        <input type="text" name="age" placeholder="Enter Age" ngModel required oninvalid="this.setCustomValidity('Enter Age Here')">
 
         <label for="name">
           <b>Name</b>
         </label>
-        <input type="text" name="name" placeholder="Enter Name" ngModel required>
+        <input type="text" name="name" placeholder="Enter Name" ngModel required oninvalid="this.setCustomValidity('Enter Name Here')">
 
         <label for="email">
           <b>Email</b>
         </label>
-        <input type="text" name="email" placeholder="Enter Email" ngModel required>
+        <input type="text" name="email" placeholder="Enter Email" ngModel required oninvalid="this.setCustomValidity('Enter Email Here')">
 
         <label for="psw">
           <b>Password</b>
         </label>
-        <input type="password" name="password" placeholder="Enter Password" ngModel required>
+        <input type="password" name="password" placeholder="Enter Password" ngModel
+        required oninvalid="this.setCustomValidity('Enter Password Here')">
 
         <label for="psw-repeat">
           <b>Repeat Password</b>
         </label>
         <input type="password" name="psw-repeat" placeholder="Repeat Password"
-        ngModel required oninvalid="this.setCustomValidity('Enter User Name Here')">
+        ngModel required oninvalid="this.setCustomValidity('Repeat Password Here')">
 
 
 
@@ -64,6 +65,8 @@ import {NgForm} from '@angular/forms';
     </div>
     <a *ngIf="f.submitted" href="/registration">Back</a> <a *ngIf="f.submitted"> | </a> <a *ngIf="f.submitted" href="#">Home</a>
     </form>
+  </div>
+  </div>
   </div>
 
 `,

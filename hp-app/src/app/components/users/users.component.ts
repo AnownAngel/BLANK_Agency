@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { User } from '../user';
+import { User } from './user';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { DbUser } from '../user';
+import { DbUser } from './user';
 import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
-import { UserUsers } from './user.d';
+import { Users } from './user';
 // import { USERS } from '../mock-users';
 import { BackendService } from '../../services/backend.service';
 import { Observable } from 'rxjs/Observable';
@@ -19,7 +19,7 @@ export class UsersComponent implements OnInit {
 
   // users = USERS;
   // private date: any;
-  users: UserUsers[];
+  users: Users[];
   data: any;
   data2: any;
   selectedUser: User;
@@ -66,8 +66,8 @@ export class UsersComponent implements OnInit {
 
     });
   }
-  public addUser2(name: string): void {
-    const newUser: UserUsers = { name } as UserUsers;
-    this.backendService.addUser2(newUser).subscribe(data => this.users.push(newUser));
+  public addUser(name: string): void {
+    const newUser: Users = { name } as Users;
+    this.backendService.addUser(newUser).subscribe(data => this.users.push(newUser));
   }
 }

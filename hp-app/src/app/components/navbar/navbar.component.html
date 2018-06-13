@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default bgImg">
+<nav class="navbar navbar-default bgImg" role="navigation">
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -9,37 +9,40 @@
       <a class="navbar-brand active" routerLink="/" routerLinkActive="active">{{title}}</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-      <div class="nav navbar-nav">
-        <ul class="nav navbar-nav">
-          <li>
-            <a routerLink="/cerveau" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+      <ul class="nav navbar-nav">
+        <li>
+          <a routerLink="/cerveau" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
               true}">Cerveau</a>
-          </li>
-          <li>
-              <a routerLink="/lazy" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+        </li>
+        <li>
+          <a routerLink="/lazy" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
                 true}">Lazy</a>
-            </li>
-          <li>
-            <a routerLink="/users" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+        </li>
+        <li>
+          <a routerLink="/users" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
               true}">Users</a>
-          </li>
-
-          <div class="nav navbar-nav navbar-right">
-
-            <li class="nav navbar-nav">
-              <li>
-                <a routerLink="/registration" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+        </li>
+        <li>
+          <a routerLink="/modal" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+              true}">Modal</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a routerLink="/registration" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
                   true}">
-                  <span class="glyphicon glyphicon-user"></span> Sign Up BLANK!</a>
-                  </li>
-                  <li>
-              <a class="button" routerLink="/login" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
+            <span class="glyphicon glyphicon-user"></span> Sign Up BLANK!</a>
+        </li>
+
+        <li>
+          <a class="button" routerLink="/login" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:
                 true}">
-                 Login</a>
-            </li>
-          </div>
-        </ul>
-      </div>
+            Login</a>
+        </li>
+        <li>
+
+        </li>
+      </ul>
     </div>
   </div>
 </nav>

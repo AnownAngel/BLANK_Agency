@@ -11,6 +11,7 @@ import { StartpageComponent } from '../components/startpage/startpage.component'
 import { LoginComponent } from '../components/login/login.component';
 import { TestComponent } from '../components/test/test.component';
 import { CerveauComponent } from '../components/cerveau/cerveau.component';
+import { ModalComponent } from '../components/modal/modal.component';
 
 const routes: Routes = [
   {
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'users', component: UsersComponent, data: { animation: 'users' } },
   { path: 'registration', component: RegistrationComponent, data: { animation: 'registration' } },
   { path: 'test', component: TestComponent, data: { animation: 'test' } },
+  { path: 'modal', component: ModalComponent, data: { animation: 'modal' } },
 ];
 
 @NgModule({

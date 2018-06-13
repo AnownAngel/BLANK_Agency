@@ -16,6 +16,9 @@ import { UserDetailComponent } from './components/user-detail/user-detail.compon
 import { TestComponent } from './components/test/test.component';
 import { CerveauComponent } from './components/cerveau/cerveau.component';
 import { LazyTestComponent } from './lazy/lazy-test/lazy-test.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { ModalDirective } from './modal.directive';
+
 
 
 @NgModule({
@@ -36,7 +39,9 @@ import { LazyTestComponent } from './lazy/lazy-test/lazy-test.component';
     UserDetailComponent,
     TestComponent,
     CerveauComponent,
-    LoginComponent
+    LoginComponent,
+    ModalComponent,
+    ModalDirective
   ],
   providers: [],
   bootstrap: [AppComponent]

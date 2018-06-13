@@ -1,20 +1,19 @@
-/*export class User {
-    id: number;
-    name: string;
-    password: string;
-    age: number;
-}
-export class DbUser {
-    id: number;
-    name: string;
-    password: string;
-    age: number;
-}
-export class AddUser {
+export interface Users {
     id: number;
     name: string;
     password: string;
     email: string;
     age: number;
 }
-*/
+export interface User {
+    id: number;
+    name: string;
+    password: string;
+    age: number;
+}
+export interface DbUser {
+    id: number;
+    name: string;
+    password: string;
+    age: number;
+}

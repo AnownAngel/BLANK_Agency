@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { User } from '../user';
-import { DbUser } from '../user';
+import { User } from '../users/user';
+import { DbUser } from '../users/user';
 @Component({
   selector: 'app-user-detail',
   templateUrl: './user-detail.component.html',
